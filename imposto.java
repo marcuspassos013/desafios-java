@@ -7,7 +7,7 @@ public class imposto {
 
         Scanner input = new Scanner(System.in);
 
-        double x, prestaSevico, ganhoCapital,
+        double salario, prestaSevico, ganhoCapital,
                 gastoMedico, gastoEducacional;
         double impostoBrutoTotal = 0; 
         double maximoDedutivo = 0;  
@@ -18,7 +18,7 @@ public class imposto {
 
 //Dados de entrada.        
         System.out.print("Renda anual com salário de: ");
-        x = input.nextDouble();
+        salario = input.nextDouble();
 
         System.out.print("Renda anual com serviços prestados: ");
         prestaSevico = input.nextDouble();
@@ -40,13 +40,13 @@ public class imposto {
 
 //lógica para calcular imposto sobre o salário.        
         if (x / 12 <= 3000) {
-            imposto = x - x;
+            imposto = salario - salario;
             System.out.printf("Imposto sobre salário %.2f%n", imposto);
-        } else if ((x / 12 > 3000) && (x / 12 <= 5000)) {
-            imposto = x - (x * (1 - 0.10));
+        } else if ((salario / 12 > 3000) && (salario / 12 <= 5000)) {
+            imposto = salario - (salario * (1 - 0.10));
             System.out.printf("Imposto sobre salário %.2f%n", imposto);
-        } else if (x / 12 > 5000) {
-            imposto = x - (x * (1 - 0.20));
+        } else if (salario / 12 > 5000) {
+            imposto = salario - (salario * (1 - 0.20));
 
             System.out.printf("Imposto sobre salário %.2f%n", imposto);
 
@@ -55,7 +55,7 @@ public class imposto {
 
 //lógica para calcular imposto sobre prestação de serviço
         if (prestaSevico > 0) {
-            prestaSevico = (float) prestaSevico - (prestaSevico * (1 - 0.15));
+            prestaSevico = (double) prestaSevico - (prestaSevico * (1 - 0.15));
             System.out.printf("Imposto sobre serviços: %.2f%n ", prestaSevico);
         } else
             prestaSevico = 0.00;
@@ -64,7 +64,7 @@ public class imposto {
 
 //lógica para calcular imposto sobre ganhos capitais.(imóveis,ações,venda de automóveis,etc..)
         if (ganhoCapital > 0){
-            ganhoCapital = (float) ganhoCapital - (ganhoCapital * (1 - 0.20));
+            ganhoCapital = (double) ganhoCapital - (ganhoCapital * (1 - 0.20));
             System.out.printf("Imposto sobre ganho capital: %.2f%n ",ganhoCapital);
         } else
             System.out.println();
