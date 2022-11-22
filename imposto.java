@@ -55,7 +55,7 @@ public class imposto {
 
 //lógica para calcular imposto sobre prestação de serviço
         if (prestaSevico > 0) {
-            prestaSevico = (double) prestaSevico - (prestaSevico * (1 - 0.15));
+            prestaSevico = prestaSevico - (prestaSevico * (1 - 0.15));
             System.out.printf("Imposto sobre serviços: %.2f%n ", prestaSevico);
         } else
             prestaSevico = 0.00;
@@ -64,7 +64,7 @@ public class imposto {
 
 //lógica para calcular imposto sobre ganhos capitais.(imóveis,ações,venda de automóveis,etc..)
         if (ganhoCapital > 0){
-            ganhoCapital = (double) ganhoCapital - (ganhoCapital * (1 - 0.20));
+            ganhoCapital = ganhoCapital - (ganhoCapital * (1 - 0.20));
             System.out.printf("Imposto sobre ganho capital: %.2f%n ",ganhoCapital);
         } else
             System.out.println();
